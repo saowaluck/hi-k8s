@@ -1,0 +1,5 @@
+# overlay/kustomization.yaml
+resources:
+- ../../base
+patchesStrategicMerge:
+  - configmap-patch.yaml

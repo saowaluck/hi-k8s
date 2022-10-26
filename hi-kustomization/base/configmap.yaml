@@ -1,0 +1,7 @@
+#base/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-config
+data:
+  DB_URL: "jdbc:postgresql://10.232.12.120:5432/local"

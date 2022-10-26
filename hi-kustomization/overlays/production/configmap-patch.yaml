@@ -1,0 +1,7 @@
+#overlay/configmap-patch.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-config
+data:
+  DB_URL: "jdbc:postgresql://127.0.0.1:5432/dev"
