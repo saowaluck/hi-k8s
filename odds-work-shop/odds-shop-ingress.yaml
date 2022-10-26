@@ -1,0 +1,34 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: odds-shop-ingress
+  namespace: odds-shop
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  tls:
+  - hosts:
+    - api.odds-shop.team
+    secretName: odds-shop-api-tls
+  rules:
+  - host: www.odds-shop.team
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: odds-shopweb
+            port:
+              number: 8080
+  - host: api.odds-shop.team
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: odds-shopgw
+            port:
+              number: 8099
+

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: odds-shopapi-deployment
+  namespace: odds-shop
+spec:
+  selector:
+    matchLabels:
+      app: odds-shopapi
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: odds-shopapi
+    spec:
+      containers:
+      - name: odds-shopapi
+        image: ghcr.io/bazsup/odds-shopapi:v1
+
+
